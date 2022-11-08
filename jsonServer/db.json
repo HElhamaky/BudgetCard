@@ -1,0 +1,12 @@
+{
+  "budget": [
+    {
+      "totalCapitalOne": 20000000,
+      "totalCapitalTwo": 10000000,
+      "totalCapitalThree": 5000000,
+      "totalCapitalFour": 5000000
+    }
+  ],
+  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "profile": { "name": "typicode" }
+}
