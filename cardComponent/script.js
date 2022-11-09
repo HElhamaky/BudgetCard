@@ -6,7 +6,7 @@ fetch('http://localhost:3000/budget')
   .then((data) => {
     budgetData = data[0];
     budgetDataArr = Object.values(budgetData);
-    console.log(budgetDataArr);
+    // console.log(budgetDataArr);
 
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
@@ -40,12 +40,43 @@ fetch('http://localhost:3000/budget')
         ],
       },
       options: {
+        plugins: {
+          legend: {
+            display: false,
+          },
+        },
         scales: {
           y: {
             beginAtZero: true,
             ticks: {
-              callback: function (val, index, ticks) {
-                return val + ' SAR';
+              font: {
+                size: 15,
+                weight: 500
+              },
+              // Include a dollar sign in the ticks
+              callback: function (value, index, ticks) {
+                return value + ' SAR';
+              },
+            },
+          },
+          x: {
+            ticks: {
+              font: {
+                size: 15,
+              },
+              callback: function (value, index, ticks) {
+                let characterLimit = 28;
+                let label = this.getLabelForValue(value);
+                if (label.length >= characterLimit) {
+                  return (
+                    '...' +
+                    label
+                      .slice(0, label.length)
+                      .substring(0, characterLimit - 1)
+                      .trim()
+                  );
+                }
+                return label;
               },
             },
           },
