@@ -1,4 +1,116 @@
-.chart {
-  width: 600px;
-  
+@font-face {
+  font-family: ITC;
+  src: url(/fonts/ITC\ Handel\ Gothic\ Arabic\ W23.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: ITC-Bold;
+  src: url(/fonts/ITC-Handel-Gothic-Arabic-Bold.ttf);
+  font-weight: bold;
+}
+
+html,
+body {
+  background-color: #f5f5f5;
+}
+.cardPageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.budgetCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  max-width: 303px;
+  max-height: 547px;
+  flex-grow: 1;
+}
+
+.budgetCardTitle {
+  grid-area: 1 / 1 / 2 / 6;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  font-family: ITC-Bold !important;
+  padding-right: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  max-height: rem;
+}
+.budgetCardTitle i {
+  font-size: 40px;
+  color: #7d7d7d;
+}
+.budgetCardTitle p {
+  font-family: ITC;
+  margin-right: 1rem;
+}
+
+.budgetCardInfo {
+  grid-area: 2 / 1 / 5 / 2;
+  font-family: ITC;
+  font-size: 12px;
+}
+
+div[class*='totalCapitalNum'] {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.budgetCardInfo {
+  padding-top: 1.5rem;
+}
+
+.budgetCardInfo > * {
+  margin-bottom: 5px;
+}
+
+.totalCapitalDiv1 {
+  grid-area: 1 / 1 / 3 / 2;
+}
+.totalCapitalDiv2 {
+  grid-area: 1 / 2 / 2 / 6;
+  font-family: ITC-Bold;
+}
+.totalCapitalDiv3 {
+  grid-area: 2 / 2 / 3 / 6;
+  color: #aca6a6;
+  font-size: 10px;
+}
+
+span[class^='dot'] {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 2rem;
+  margin-top: 4px;
+}
+
+.dot1 {
+  background-color: #00665e !important;
+}
+.dot2 {
+  background-color: #579ad7 !important;
+}
+.dot3 {
+  background-color: #575757 !important;
+}
+.dot4 {
+  background-color: #e1dbdb !important;
+}
+
+.budgetChart {
+  grid-area: 5 / 1 / 9 / 2;
+  width: 80%;
+  margin-right: auto;
+  margin-left: 10px;
 }
