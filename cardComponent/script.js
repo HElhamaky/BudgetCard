@@ -51,7 +51,7 @@ fetch('http://localhost:3000/budget')
             ticks: {
               font: {
                 size: 15,
-                weight: 500
+                weight: 500,
               },
               // Include a dollar sign in the ticks
               callback: function (value, index, ticks) {
@@ -80,11 +80,6 @@ fetch('http://localhost:3000/budget')
               },
             },
           },
-          x:{
-            ticks:{
-              display:false
-            }
-          }
         },
       },
     });
