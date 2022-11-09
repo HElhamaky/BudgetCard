@@ -34,7 +34,7 @@ fetch('http://localhost:3000/budget')
               'rgba(255, 255, 255, 1)',
               'rgba(255, 255, 255, 1)',
             ],
-            
+
             borderWidth: 1,
           },
         ],
@@ -43,7 +43,17 @@ fetch('http://localhost:3000/budget')
         scales: {
           y: {
             beginAtZero: true,
+            ticks: {
+              callback: function (val, index, ticks) {
+                return val + ' SAR';
+              },
+            },
           },
+          x:{
+            ticks:{
+              display:false
+            }
+          }
         },
       },
     });
